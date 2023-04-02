@@ -4,5 +4,5 @@
  :url "https://github.com/dchssr/janbox2")
 
 (declare-native
- :name "testing"
+ :name "janbox2"
  :source ["janbox2.c"])
