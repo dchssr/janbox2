@@ -5,4 +5,5 @@
 
 (declare-native
  :name "janbox2"
+ :cflags ["-DTB_IMPL"]
  :source ["janbox2.c"])
