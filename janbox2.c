@@ -6,14 +6,26 @@ static Janet
 cfun_tb_init
 (int32_t argc, Janet *argv) {
   janet_fixarity(argc, 0);
-  return janet_wrap_integer(tb_init());
+
+  int result = tb_init();
+
+  if (result == TB_ERR_INIT_ALREADY)
+    janet_panic("termbox is already initialized");
+
+  return janet_wrap_integer(result);
 }
 
 static Janet
 cfun_tb_shutdown
 (int32_t argc, Janet *argv) {
   janet_fixarity(argc, 0);
-  return janet_wrap_integer(tb_shutdown());
+
+  int result = tb_shutdown();
+
+  if (result == TB_ERR_NOT_INIT)
+    janet_panic("termbox is not initialized");
+
+  return janet_wrap_integer(result);
 }
 
 static JanetReg cfuns[] = {
