@@ -14,7 +14,7 @@ void jb2_error_check(int result) {
 }
 
 static Janet
-cfun_tb_init
+jb2_tb_init
 (int32_t argc, Janet *argv) {
   janet_fixarity(argc, 0);
 
@@ -25,7 +25,7 @@ cfun_tb_init
 }
 
 static Janet
-cfun_tb_shutdown
+jb2_tb_shutdown
 (int32_t argc, Janet *argv) {
   janet_fixarity(argc, 0);
 
@@ -36,7 +36,7 @@ cfun_tb_shutdown
 }
 
 static Janet
-cfun_tb_width
+jb2_tb_width
 (int32_t argc, Janet *argv) {
   janet_fixarity(argc, 0);
 
@@ -47,7 +47,7 @@ cfun_tb_width
 }
 
 static Janet
-cfun_tb_height
+jb2_tb_height
 (int32_t argc, Janet *argv) {
   janet_fixarity(argc, 0);
 
@@ -58,10 +58,10 @@ cfun_tb_height
 }
 
 static JanetReg cfuns[] = {
-  {"init"    , cfun_tb_init    , "(init)\n\nInitialize Termbox."},
-  {"shutdown", cfun_tb_shutdown, "(shutdown)\n\nShut down Termbox."},
-  {"width"   , cfun_tb_width   , "(width)\n\nReturns termbox's buffer width.\nThis should be the same as the terminal's width."},
-  {"height"  , cfun_tb_height  , "(shutdown)\n\nReturn termbox's buffer height.\nThis should be the same as the terminal's height."},
+  {"init"    , jb2_tb_init    , "(init)\n\nInitialize Termbox."},
+  {"shutdown", jb2_tb_shutdown, "(shutdown)\n\nShut down Termbox."},
+  {"width"   , jb2_tb_width   , "(width)\n\nReturns termbox's buffer width.\nThis should be the same as the terminal's width."},
+  {"height"  , jb2_tb_height  , "(shutdown)\n\nReturn termbox's buffer height.\nThis should be the same as the terminal's height."},
   {NULL, NULL, NULL},
 };
 
